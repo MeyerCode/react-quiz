@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+var questions = {
+	question: "Vad ås det kan man hur?",
+	answers: [ 	
+		{ text: "ja", correct: false },
+		{ text: "nej", correct: false  }, 
+		{ text: "kanske", correct: true } ]
+}
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+	const [question, setQuestion] = useState(null);
+	useEffect(() => {
+		setQuestion(
+			<div>
+				<h2> {questions.question} </h2>
+
+				<ul>
+				{console.log(questions.answers)}
+				{questions.answers.map((a) =>
+					<li> {a.text} </li>
+				)}
+
+				</ul>
+			</div>
+		);
+	},[]);
+
+	return (
+		<div className="App">
+		<h1>ADAM AND EVE's thingamabob</h1>
+		<div className="question">
+		{question}
+		</div>
+		</div>
+	);
 }
 
 export default App;
