@@ -4,7 +4,8 @@ var questions = {
 	answers: [ 	
 		{ text: "ja", correct: false },
 		{ text: "nej", correct: false  }, 
-		{ text: "kanske", correct: true } ]
+		{ text: "kanske", correct: true } 
+  ]
 }
 
 
