@@ -17,13 +17,19 @@ function App() {
 			<div>
 				<h2> {questions.question} </h2>
 
-				<ul>
-				{console.log(questions.answers)}
-				{questions.answers.map((a) =>
-					<li> {a.text} </li>
-				)}
+				<form>
+					{console.log(questions.answers)}
+					{questions.answers.map((a) =>
+						<div className="radio" key={a.text}>
+						<label>
+						<input type="radio"/>
+						{a.text}
+						</label>
+						</div>
 
-				</ul>
+					)}
+
+				</form>
 			</div>
 		);
 	},[]);
