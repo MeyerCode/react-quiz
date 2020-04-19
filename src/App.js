@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
-var questions = {
-	question: "Vad ås det kan man hur?",
-	answers: [ 	
-		{ text: "ja", correct: false },
-		{ text: "nej", correct: false  }, 
-		{ text: "kanske", correct: true } 
-  ]
-}
-
+var questions = [
+  {
+    question: "Vad ås det kan man hur?",
+    answers: [ 	
+      { text: "ja", correct: false },
+      { text: "nej", correct: false  }, 
+      { text: "kanske", correct: true } 
+    ]
+  }
+]
 
 function App() {
 
@@ -15,15 +16,15 @@ function App() {
 	useEffect(() => {
 		setQuestion(
 			<div>
-				<h2> {questions.question} </h2>
+				<h2> {questions[0].question} </h2>
 
 				<form>
-					{console.log(questions.answers)}
-					{questions.answers.map((a) =>
+					{console.log(questions[0].answers)}
+					{questions[0].answers.map((a) =>
 						<div className="radio" key={a.text}>
 						<label>
 						<input type="radio"/>
-						{a.text}
+              {a.text}
 						</label>
 						</div>
 
@@ -36,7 +37,7 @@ function App() {
 
 	return (
 		<div className="App">
-		<h1>ADAM AND EVE's thingamabob</h1>
+		<h1>Ett quiz</h1>
 		<div className="question">
 		{question}
 		</div>
