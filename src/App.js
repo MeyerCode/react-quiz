@@ -37,7 +37,7 @@ function Question(props) {
     <li key={index} onClick={ () => { 
         console.log(`You guessed no. ${index}: ${answer.text}`); 
         setGuess(index); 
-        document.getElementById(index).style.backgroundColor = answer.correct ? "green":"red";
+        document.getElementById(index).style.backgroundColor = answer.correct ? "green" : "red";
       }}>
       <span id={index}>{answer.text}</span>
     </li>
@@ -64,13 +64,14 @@ function Question(props) {
 
 function App() {
 
+  const questionComponents = questions.map( (question) =>
+    <Question content={question.content} answers={question.answers} extraInfo={question.extraInfo}/>
+  );
+
 	return (
 		<div className="App">
       <h1>Ett quiz</h1>
-      {questions.map((question) => 
-       <h1>hej</h1> 
-      <Question content={question.content} answers={questions.answers} extraInfo={questions.extraInfo}/>
-      )}
+      {questionComponents}
       <Question content={questions[0].content} answers={questions[0].answers} extraInfo={questions[0].extraInfo}/>
 		</div>
 	);
