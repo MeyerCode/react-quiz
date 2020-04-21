@@ -33,20 +33,22 @@ Question.propTypes = {
 function Question(props) {
   const [guess, setGuess] = useState(null);
 
+  const stylesList = props.answers.map((answer) => '');
+  const [answerStyles] = useState(stylesList);
+
   const answers = props.answers.map((answer, index) => 
     <li key={index} onClick={ () => { 
         console.log(`You guessed no. ${index}: ${answer.text}`); 
         setGuess(index); 
-        document.getElementById(index).style.backgroundColor = answer.correct ? "green" : "red";
+        answerStyles[index] = answer.correct ? 'green' : 'red';
       }}>
-      <span id={index}>{answer.text}</span>
+      <span id={index} style={{backgroundColor: answerStyles[index]}}>{answer.text}</span>
     </li>
   );
 
   var extraInfo = <p></p>
   if (guess !== null) {
     extraInfo = <p>{props.extraInfo}</p>;
-    
   }
 
   return(
