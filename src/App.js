@@ -8,7 +8,8 @@ const questions = [
       { text: "ja", correct: false },
       { text: "nej", correct: false  }, 
       { text: "kanske", correct: true } 
-    ]
+    ],
+    extraInfo: "Det kan vara för att det har blivit en gång mer än när den."
   },
 ]
 
@@ -16,7 +17,8 @@ Question.propTypes = {
   content: PropTypes.string.isRequired,
   answers: PropTypes.arrayOf(
     PropTypes.object  
-  )
+  ).isRequired,
+  extraInfo: PropTypes.string.isRequired,
 };
 
 function Question(props) {
@@ -26,10 +28,16 @@ function Question(props) {
     <li key={index} onClick={ () => { 
         console.log(`You guessed no. ${index}: ${answer.text}`); 
         setGuess(index); 
+          
       }}>
       <span>{answer.text}</span>
     </li>
   );
+
+  var extraInfo = <p></p>
+  if (guess !== null) {
+    extraInfo = <p>{props.extraInfo}</p>;
+  }
 
   return(
     <div className="question-container">
@@ -38,6 +46,7 @@ function Question(props) {
       <ul>
         {answers}
       </ul>
+      {extraInfo}
 
     </div>
   );
@@ -48,7 +57,7 @@ function App() {
 	return (
 		<div className="App">
       <h1>Ett quiz</h1>
-      <Question content={questions[0].content} answers={questions[0].answers}/>
+      <Question content={questions[0].content} answers={questions[0].answers} extraInfo={questions[0].extraInfo}/>
 		</div>
 	);
 }
