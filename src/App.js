@@ -11,6 +11,15 @@ const questions = [
     ],
     extraInfo: "Det kan vara för att det har blivit en gång mer än när den."
   },
+  {
+    content: "Men om de kan hur va en så?",
+    answers: [ 	
+      { text: "Ibland", correct: false },
+      { text: "Många", correct: false  }, 
+      { text: "kanske", correct: true } 
+    ],
+    extraInfo: "Om den andra inte har då kommer aldrig vara som"
+  },
 ]
 
 Question.propTypes = {
@@ -28,15 +37,16 @@ function Question(props) {
     <li key={index} onClick={ () => { 
         console.log(`You guessed no. ${index}: ${answer.text}`); 
         setGuess(index); 
-          
+        document.getElementById(index).style.backgroundColor = answer.correct ? "green":"red";
       }}>
-      <span>{answer.text}</span>
+      <span id={index}>{answer.text}</span>
     </li>
   );
 
   var extraInfo = <p></p>
   if (guess !== null) {
     extraInfo = <p>{props.extraInfo}</p>;
+    
   }
 
   return(
@@ -57,6 +67,10 @@ function App() {
 	return (
 		<div className="App">
       <h1>Ett quiz</h1>
+      {questions.map((question) => 
+       <h1>hej</h1> 
+      <Question content={question.content} answers={questions.answers} extraInfo={questions.extraInfo}/>
+      )}
       <Question content={questions[0].content} answers={questions[0].answers} extraInfo={questions[0].extraInfo}/>
 		</div>
 	);
