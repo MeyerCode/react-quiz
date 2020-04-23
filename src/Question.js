@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
+import { RadioButtonUnchecked, CheckCircleOutline, HighlightOff } from '@material-ui/icons';
+import { Card, Button } from 'react-bootstrap';
 
 Question.propTypes = {
   content: PropTypes.string.isRequired,
@@ -14,15 +16,20 @@ function Question(props) {
 
   const stylesList = props.answers.map( _ => '');
   const [answerStyles] = useState(stylesList);
+  const [iconsStateList] = useState(props.answers.map( _ => <RadioButtonUnchecked /> ));
 
   const answers = props.answers.map((answer, index) => 
-    <li key={index} onClick={ () => { 
+    <div className="answer-container" onClick={ () => { 
         console.log(`You guessed no. ${index}: ${answer.text}`); 
         setGuess(index); 
         answerStyles[index] = answer.correct ? 'green' : 'red';
+        iconsStateList[index] = answer.correct 
+          ? <CheckCircleOutline /> 
+          : <HighlightOff />;
       }}>
+      {iconsStateList[index]} 
       <span id={index} style={{color: answerStyles[index]}}>{answer.text}</span>
-    </li>
+    </div>
   );
 
   var extraInfo = <p></p>
@@ -31,15 +38,16 @@ function Question(props) {
   }
 
   return(
-    <div className="question-container">
-      <h2><i>{props.content}</i></h2>
-
-      <ul>
-        {answers}
-      </ul>
-      {extraInfo}
-
-    </div>
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>{props.content}</Card.Title>
+        <Card.Text>
+          {answers}
+          {extraInfo}
+        </Card.Text>
+      </Card.Body>
+    </Card>
   );
 }
 

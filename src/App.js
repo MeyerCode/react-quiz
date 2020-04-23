@@ -1,5 +1,6 @@
 import React from 'react';
 import Question from './Question.js';
+import './App.css';
 
 const questions = [
   {
@@ -44,7 +45,12 @@ function App() {
 	return (
 		<div className="App">
       <h1>Ett quiz</h1>
-      {questionComponents}
+      {/*questionComponents*/}
+      <div className="question-card">
+        <div className="media-container">
+        </div>
+        <Question content={questions[2].content} answers={questions[2].answers} extraInfo={questions[2].extraInfo} />
+      </div>
 		</div>
 	);
 }
