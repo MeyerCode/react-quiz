@@ -21,7 +21,7 @@ function Question(props) {
         setGuess(index); 
         answerStyles[index] = answer.correct ? 'green' : 'red';
       }}>
-      <span id={index} style={{backgroundColor: answerStyles[index]}}>{answer.text}</span>
+      <span id={index} style={{color: answerStyles[index]}}>{answer.text}</span>
     </li>
   );
 
