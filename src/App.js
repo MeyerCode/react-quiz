@@ -1,26 +1,9 @@
 import React from 'react';
 import Question from './Question.js';
 import './App.css';
+import { Container, Row } from 'react-bootstrap';
 
 const questions = [
-  {
-    content: "Vad ås det kan man hur?",
-    answers: [ 	
-      { text: "ja", correct: false },
-      { text: "nej", correct: false  }, 
-      { text: "kanske", correct: true } 
-    ],
-    extraInfo: "Det kan vara för att det har blivit en gång mer än när den."
-  },
-  {
-    content: "Men om de kan hur va en så?",
-    answers: [ 	
-      { text: "Ibland", correct: false },
-      { text: "Många", correct: false  }, 
-      { text: "kanske", correct: true } 
-    ],
-    extraInfo: "Om den andra inte har då kommer aldrig vara som"
-  },
   {
     content: "Vad krävs för att slåtterblomma ska kunna växa på en strandäng?",
     answers: [ 	
@@ -34,23 +17,24 @@ const questions = [
 
 function App() {
 
-  const questionComponents = questions.map( (question) =>
-    <div className="question-card">
-      <div className="media-container">
-      </div>
-      <Question content={question.content} answers={question.answers} extraInfo={question.extraInfo}/>
-    </div>
-  );
-
 	return (
 		<div className="App">
-      <h1>Ett quiz</h1>
-      {/*questionComponents*/}
-      <div className="question-card">
-        <div className="media-container">
-        </div>
-        <Question content={questions[2].content} answers={questions[2].answers} extraInfo={questions[2].extraInfo} />
-      </div>
+      <h1>Quiz 1</h1>
+
+      <Container>
+        <Row>
+          <div id="strandaeng-media">
+          </div>
+        </Row>
+      </Container>
+      <Question content={questions[0].content} answers={questions[0].answers} extraInfo={questions[0].extraInfo} className="question-card" />
+
+      <Container>
+        <Row>
+          <div id="">
+          </div>
+        </Row>
+      </Container>
 		</div>
 	);
 }

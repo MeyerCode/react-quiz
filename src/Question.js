@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { RadioButtonUnchecked, CheckCircleOutline, HighlightOff } from '@material-ui/icons';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Container, Row, Col } from 'react-bootstrap';
 
 Question.propTypes = {
   content: PropTypes.string.isRequired,
@@ -19,7 +19,8 @@ function Question(props) {
   const [iconsStateList] = useState(props.answers.map( _ => <RadioButtonUnchecked /> ));
 
   const answers = props.answers.map((answer, index) => 
-    <div className="answer-container" onClick={ () => { 
+    <Container>
+    <div className="answer-container d-flex align-items-center" onClick={ () => { 
         console.log(`You guessed no. ${index}: ${answer.text}`); 
         setGuess(index); 
         answerStyles[index] = answer.correct ? 'green' : 'red';
@@ -27,27 +28,43 @@ function Question(props) {
           ? <CheckCircleOutline /> 
           : <HighlightOff />;
       }}>
-      {iconsStateList[index]} 
-      <span id={index} style={{color: answerStyles[index]}}>{answer.text}</span>
+      <Row sm={2}>
+        <Col xs={1} sm={1} md={1}>
+          {iconsStateList[index]} 
+        </Col>
+        <Col xs={{ span: 10, offset: 1 }} sm={{ span: 10, offset: 1 }} md={{ span: 10, offset: 1 }} className="text-left">
+          <span id={index} style={{color: answerStyles[index]}}>{answer.text}</span>
+        </Col>
+      </Row>
     </div>
+    </Container>
   );
 
   var extraInfo = <p></p>
   if (guess !== null) {
-    extraInfo = <p>{props.extraInfo}</p>;
+    extraInfo = <p className="text-justify">{props.extraInfo}</p>;
   }
 
   return(
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>{props.content}</Card.Title>
-        <Card.Text>
-          {answers}
-          {extraInfo}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+    <Container>
+      <Row>
+        <Col md={2} />
+        <Col md={8}>
+          <Card style={{ width: '30rem' }}>
+            {/*<Card.Img variant="top" src="holder.js/100px180" />*/}
+            <Card.Body>
+              <Card.Title>{props.content}</Card.Title>
+              <Card.Text>
+                {answers}
+                <br />
+                {extraInfo}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={2} />
+      </Row>
+    </Container> 
   );
 }
 
