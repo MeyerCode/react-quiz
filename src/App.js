@@ -8,7 +8,7 @@ function App() {
 		<div className="App">
 
       <div>
-        <Question content={questions[5].content} answers={questions[5].answers} extraInfo={questions[5].extraInfo} />
+        <Question content={questions[3].content} answers={questions[3].answers} extraInfo={questions[3].extraInfo} />
         <br />
         <br />
       </div>
@@ -55,28 +55,17 @@ const questions = [
     ],
     extraInfo: "Om du var på väg att klicka på c) så kan det bero på att salthalt också har en effekt på vattnets densitet (alltså vattnets tyngd), men det är högre salthalt som gör vatten tyngre. I nordatlanten har den varma golfströmmen svalnat så mycket att den sjunker. Den vändpunkten fungerar som en stark pump som drar i hela havscirkulationen. ",
   },
-  // TODO Väntar med den här, animationen måste skrivas om...
-  //{
-  //  title: "Koldioxidutsläpp – ett etiskt dilemma i global politik",
-  //  link: "/koldioxidfoerdelning",
-  //  content: "Vilken världsregion har släppt ut mest sedan 1751 (per invånare)? Av Sverige och Kina, vilket land har släppt ut mest sedan 1751 (per invånare)?",
-  //  answers: [ 	
-  //    { text: "", correct: false },
-  //    { text: "", correct: false  }, 
-  //    { text: "", correct: true } 
-  //  ],
-  //  extraInfo: ""
-  //},
   {
-    // TODO Den här är inte heller klar
-    title: "Dramatiska väderfenomen ökar smältningen av havsis i ett varmare klimat",
-    link: "/vaeder",
-    content: "Vilket år var utsträckningen av havsis som minst?",
+    title: "Koldioxidutsläpp – ett etiskt dilemma i global politik",
+    link: "/koldioxidfoerdelning",
+    content: "Vilken världsregion har släppt ut mest sedan 1751 (per invånare)? Av Sverige och Kina, vilket land har släppt ut mest sedan 1751 (per invånare)?",
     answers: [ 	
-      { text: "När jorden värms upp så fördelas värmen jämnt.", correct: false },
-      { text: "När jorden värms upp så påverkas polerna mer.", correct: true }, 
+      { text: "Nordamerika är regionen och Kina har släppt ut mer än Sverige.", correct: false },
+      { text: "Nordamerika är regionen och Sverige har släppt ut mer än Kina.", correct: true },
+      { text: "Europa är regionen och Kina har släppt ut mer än Sverige.", correct: false },
+      { text: "Europa är regionen och Sverige har släppt ut mer än Kina.", correct: false },
     ],
-    extraInfo: "Forskare är inte helt säkra på vilka faktorer som spelar in för att det blir så, men man anar att det delvis beror på att ljusa ytor reflekterar solstrålning som åter färdas ut i rymden. När Arktis isar blir mindre och snön på land smälter tidigare på våren tar öppna vatten- och landmassor större plats, som med sin mörka yta absorberar mer solstrålning och då värms upp mer än snön och isen de ersatt skulle gjort. Detta leder i sin tur till att snö och is försvinner ännu fortare och därmed bildas en förstärkande återkoppling."
+    extraInfo: ""
   },
   {
     title: "Artrika skogar, konflikt med vilda djur och riktigt gott kaffe",
@@ -88,5 +77,16 @@ const questions = [
       { text: "Kulturell", correct: false }, 
     ],
     extraInfo: "Mat och liknande faller under försörjande ekosystemtjänster, precis som syre i luften från växters fotosyntes. Reglerande är sådana tjänster som håller vårt vatten rent och generellt reglerar viktiga saker för människan. Man kan argumentera för att kaffebönan även är en kulturell ekosystemtjänst då en har ett mervärde som en del av många kulturer."
+  },
+  {
+    // TODO Den här är inte klar
+    title: "Dramatiska väderfenomen ökar smältningen av havsis i ett varmare klimat",
+    link: "/vaeder",
+    content: "Vilket år var utsträckningen av havsis som minst?",
+    answers: [ 	
+      { text: "När jorden värms upp så fördelas värmen jämnt.", correct: false },
+      { text: "När jorden värms upp så påverkas polerna mer.", correct: true }, 
+    ],
+    extraInfo: "Forskare är inte helt säkra på vilka faktorer som spelar in för att det blir så, men man anar att det delvis beror på att ljusa ytor reflekterar solstrålning som åter färdas ut i rymden. När Arktis isar blir mindre och snön på land smälter tidigare på våren tar öppna vatten- och landmassor större plats, som med sin mörka yta absorberar mer solstrålning och då värms upp mer än snön och isen de ersatt skulle gjort. Detta leder i sin tur till att snö och is försvinner ännu fortare och därmed bildas en förstärkande återkoppling."
   },
 ]
