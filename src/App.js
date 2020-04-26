@@ -65,7 +65,7 @@ const questions = [
       { text: "Europa är regionen och Kina har släppt ut mer än Sverige.", correct: false },
       { text: "Europa är regionen och Sverige har släppt ut mer än Kina.", correct: false },
     ],
-    extraInfo: ""
+    extraInfo: "När man tar hänsyn till ett historiskt perspektiv räknar man på hur mycket en region eller ett land släppt ut sedan industrialiseringen, då mänskliga utsläpp började öka markant. När man talar om att jorden har värmts upp en grad hittills så är även det i jämförelse med förindustriell tid. Genom att ange hur mycket som släpps ut justerat efter antal invånare så kan man på ett rättvist sätt jämföra mellan länder och regioner, då platser med fler människor rimligtvis bör få släppa ut mer. "
   },
   {
     title: "Artrika skogar, konflikt med vilda djur och riktigt gott kaffe",
