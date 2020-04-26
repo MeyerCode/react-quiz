@@ -4,20 +4,14 @@ import './App.css';
 
 function App() {
 
-  const questionList = questions.map( (question) => 
-    <div>
-      <h3><a href={question.link}>{question.title}</a></h3>
-      <Question content={question.content} answers={question.answers} extraInfo={question.extraInfo} media={question.media} />
-      <br />
-      <br />
-    </div>
-  );
-
 	return (
 		<div className="App">
 
-      <br />
-      {questionList}
+      <div>
+        <Question content={questions[0].content} answers={questions[0].answers} extraInfo={questions[0].extraInfo} />
+        <br />
+        <br />
+      </div>
 
 		</div>
 	);
