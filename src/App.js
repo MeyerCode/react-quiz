@@ -8,7 +8,7 @@ function App() {
 		<div className="App">
 
       <div>
-        <Question content={questions[0].content} answers={questions[0].answers} extraInfo={questions[0].extraInfo} />
+        <Question content={questions[1].content} answers={questions[1].answers} extraInfo={questions[1].extraInfo} />
         <br />
         <br />
       </div>
@@ -40,7 +40,7 @@ const questions = [
       { text: "Citronfjäril", correct: false }, 
       { text: "Påfågelöga", correct: false },
       { text: "Nässelfjäril", correct: true },
-      { text: "Nässelfjäril", correct: false },
+      { text: "Vinbärsfuks", correct: false },
     ],
     extraInfo: "Nässelfjäril har börjat flyga 12 dagar tidigare i snitt sedan 1991. Påfågelöga har också börjat flyga markant mycket tidigare, hela 11 dagar. Det som oroar forskare med detta är att fjärilarna ska flyga innan deras värdväxter, alltså växter de är beroende av för föda, har börjat blomma.",
   },
