@@ -8,7 +8,7 @@ function App() {
 		<div className="App">
 
       <div>
-        <Question content={questions[0].content} answers={questions[0].answers} extraInfo={questions[0].extraInfo} />
+        <Question content={questions[5].content} answers={questions[5].answers} extraInfo={questions[5].extraInfo} />
         <br />
         <br />
       </div>
@@ -84,9 +84,10 @@ const questions = [
     link: "/vaeder",
     content: "Vilket år var utsträckningen av havsis som minst?",
     answers: [ 	
-      { text: "När jorden värms upp så fördelas värmen jämnt.", correct: false },
-      { text: "När jorden värms upp så påverkas polerna mer.", correct: true }, 
+      { text: "XX", correct: true }, 
+      { text: "XX", correct: false },
+      { text: "XX", correct: false },
     ],
-    extraInfo: "Forskare är inte helt säkra på vilka faktorer som spelar in för att det blir så, men man anar att det delvis beror på att ljusa ytor reflekterar solstrålning som åter färdas ut i rymden. När Arktis isar blir mindre och snön på land smälter tidigare på våren tar öppna vatten- och landmassor större plats, som med sin mörka yta absorberar mer solstrålning och då värms upp mer än snön och isen de ersatt skulle gjort. Detta leder i sin tur till att snö och is försvinner ännu fortare och därmed bildas en förstärkande återkoppling."
+    extraInfo: "hej"
   },
 ]
