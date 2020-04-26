@@ -9,7 +9,6 @@ Question.propTypes = {
     PropTypes.object  
   ).isRequired,
   extraInfo: PropTypes.string.isRequired,
-  media: PropTypes.string.isRequired,
 };
 
 function Question(props) {
@@ -52,7 +51,7 @@ function Question(props) {
         <Col md={2} />
         <Col md={8}>
           <Card style={{ width: '30rem' }} className="question-card" >
-            <Card.Img variant="top" src={props.media} />
+            {/*<Card.Img variant="top" src={props.media} />*/}
             <Card.Body>
               <Card.Title>{props.content}</Card.Title>
               <Card.Text>
