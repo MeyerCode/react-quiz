@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { RadioButtonUnchecked, CheckCircleOutline, HighlightOff } from '@material-ui/icons';
 import { Card, Container, Row, Col } from 'react-bootstrap';
@@ -9,7 +9,6 @@ Question.propTypes = {
     PropTypes.object  
   ).isRequired,
   extraInfo: PropTypes.string.isRequired,
-  media: PropTypes.string.isRequired,
 };
 
 function Question(props) {
@@ -21,7 +20,7 @@ function Question(props) {
 
   const answers = props.answers.map((answer, index) => 
     <Container>
-    <div className="answer-container d-flex align-items-center" onClick={ () => { 
+    <div className="answer-container " onClick={ () => { 
         console.log(`You guessed no. ${index}: ${answer.text}`); 
         setGuess(index); 
         answerStyles[index] = answer.correct ? 'green' : 'red';
@@ -29,11 +28,11 @@ function Question(props) {
           ? <CheckCircleOutline /> 
           : <HighlightOff />;
       }}>
-      <Row sm={2}>
-        <Col xs={1} sm={1} md={1}>
+      <Row xs={2} sm={2}>
+        <Col xs={{ span: 1, offset: 1}} sm={{ span: 1, offset: 1}} md={{ span: 1, offset: 1}}>
           {iconsStateList[index]} 
         </Col>
-        <Col xs={{ span: 10, offset: 1 }} sm={{ span: 10, offset: 1 }} md={{ span: 10, offset: 1 }} className="text-left">
+        <Col xs={{ span: 9, offset: 1 }} sm={{ span: 9, offset: 1 }} md={{ span: 9, offset: 1 }} className="text-left">
           <span id={index} style={{color: answerStyles[index]}}>{answer.text}</span>
         </Col>
       </Row>
