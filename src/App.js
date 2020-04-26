@@ -8,7 +8,7 @@ function App() {
 		<div className="App">
 
       <div>
-        <Question content={questions[0].content} answers={questions[0].answers} extraInfo={questions[0].extraInfo} />
+        <Question content={questions[2].content} answers={questions[2].answers} extraInfo={questions[2].extraInfo} />
         <br />
         <br />
       </div>
