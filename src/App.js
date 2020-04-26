@@ -18,7 +18,7 @@ function App() {
 
       <br />
       <div>
-        <Question content={questions[3].content} answers={questions[3].answers} extraInfo={questions[3].extraInfo} />
+        <Question content={questions[4].content} answers={questions[4].answers} extraInfo={questions[4].extraInfo} />
       </div>
 
 		</div>
