@@ -84,10 +84,10 @@ const questions = [
     link: "/vaeder",
     content: "Vilket år var utsträckningen av havsis som minst?",
     answers: [ 	
-      { text: "XX", correct: true }, 
-      { text: "XX", correct: false },
-      { text: "XX", correct: false },
+      { text: "2007", correct: false }, 
+      { text: "2012", correct: true },
+      { text: "2019", correct: false },
     ],
-    extraInfo: "hej"
+    extraInfo: "Här (https://nsidc.org/arcticseaicenews/charctic-interactive-sea-ice-graph/) kan du se skillnaden mellan dessa specifika år i jämförelse med snittet under 1981-2010 i en interaktiv graf. Du kan även undersöka isens utsträckning under andra år och månader i grafen."
   },
 ]
